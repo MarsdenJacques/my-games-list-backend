@@ -3,6 +3,7 @@
     title: String, //maybe get from api
     images: Array[String(url)], //maybe get from api
     rating: Number,
+    topReviews: Array[Number(reviewId)],
     reviews: Array[Number(reviewId)]
     price: Number(?)// should be getting from APIs
     stores: Array[String(url)]//also get from apis?

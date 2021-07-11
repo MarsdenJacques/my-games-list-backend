@@ -1,7 +1,8 @@
 /*const reviewSchema = new mongoose.Schema({
     id: Number (id),
-    user: Number (UID), (can also be private)
+    user: Number (UID), (can also be private), maybe just check the user settings instead?
     rating: Number,
     date: Date,
-    content: String
+    content: String,
+    likes: Number
 })*/

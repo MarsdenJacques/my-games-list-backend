@@ -24,16 +24,12 @@ app.get('/library', (req, res) => {
 
 app.get('/:username', (req, res) => {
   const username = req.params.username
-  console.log(req.query)
-  const gameCount = req.query.gameCount || -1 //-1 is all
-  const reviewCount = req.query.reviewCount || -1 //-1 is all
-  const reviewMin = req.query.reviewMin || 1
-  const reviewMax = req.query.reviewMax || 5
-  res.send(['zelda', 'mario', 'luigi', username, gameCount, reviewCount, reviewMin, reviewMax])
+  res.send(['zelda', 'mario', 'luigi', username])
 })
 
 app.get('/library/:game', (req, res) => {
   const game = req.params.game
+  //should send back top 5 reviews or so
   if(game === 'zelda')
   {
     res.send('test: ' + fakeDB.search(0))
@@ -44,11 +40,11 @@ app.get('/library/:game', (req, res) => {
 
 app.get('/library/:game/reviews', (req, res) => {
   const game = req.params.game
-  const count = req.query.count || 0 //0 is all
-  const rating = req.query.rating || 0 //0 is all ratings
-  res.send([''+ game + 'reviews' + 1, '' + game + 'reviews' + 2, 'review count: ' + count + 'rating: ' + rating])
+  res.json({reviews: [''+ game + 'reviews' + 1, '' + game + 'reviews' + 2], averageRating: 3.35})
 })
 
 app.listen(port, () => {
   console.log(`Listening!`)
 })
+
+//need endpoint for putting reviews, patching reviews (likes, privacy(?), and edits), creating users, deleting users, deleting reviews, editing user settings
