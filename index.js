@@ -32,7 +32,7 @@ app.get('/library/:game', (req, res) => {
   //should send back top 5 reviews or so
   if(game === 'zelda')
   {
-    res.send('test: ' + fakeDB.search(0))
+    res.json({reviews: [''+ game + 'reviews' + 1, '' + game + 'reviews' + 2], averageRating: 3.35})
     return
   }
   res.send(game)
