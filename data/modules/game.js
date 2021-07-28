@@ -8,5 +8,6 @@
     price: Number(?)// should be getting from APIs
     stores: Array[String(url)]//also get from apis?
     streams: Array[String(url)]//also get from apis?
-    videos: Array[String(url)]//also get from apis?
+    videos: Array[String(url)]//also get from apis?,
+    apiId: Number
 })*/

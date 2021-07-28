@@ -4,5 +4,6 @@
     rating: Number,
     date: Date,
     content: String,
-    likes: Number
+    likes: Number,
+    gameId: Number
 })*/
